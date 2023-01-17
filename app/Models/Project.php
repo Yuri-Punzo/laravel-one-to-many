@@ -17,4 +17,9 @@ class Project extends Model
         $project_slug = Str::slug($title);
         return $project_slug;
     }
+
+    public function types()
+    {
+        return $this->hasMany(Type::class);
+    }
 }
