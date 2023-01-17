@@ -5,12 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Project extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'slug', 'description'];
+    protected $fillable = ['title', 'slug', 'description', 'type_id'];
 
     public static function generateSlug($title)
     {
@@ -18,8 +19,8 @@ class Project extends Model
         return $project_slug;
     }
 
-    public function types()
+    public function type(): BelongsTo
     {
-        return $this->hasMany(Type::class);
+        return $this->belongsTo(Type::class);
     }
 }

@@ -26,6 +26,7 @@
                             <th>Title</th>
                             <th>Slug</th>
                             <th>Description</th>
+                            <th>Type</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -36,6 +37,7 @@
                             <td>{{$project->title}}</td>
                             <td>{{$project->slug}}</td>
                             <td>{{$project->description}}</td>
+                            <td>{{$project->type ? $project->type->name : 'Null'}}</td>
                             <td class="my_column">
                                 <a href="{{route('admin.projects.show', $project->slug)}}" class="btn btn-primary view m-1">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">

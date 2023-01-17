@@ -32,7 +32,8 @@ class UpdateProjectRequest extends FormRequest
                 'max:100'
             ],
             'slug' => 'max:255',
-            'description' => 'nullable'
+            'description' => 'nullable',
+            'type_id' => ['nullable', 'exists:types,id']
         ];
     }
 

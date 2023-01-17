@@ -16,6 +16,17 @@
             <label for="description" class="form-label">Description</label>
             <textarea class="form-control" name="description" id="description" rows="4">{{old('description')}}</textarea>
         </div>
+        <div class="mb-3">
+            <label for="type_id" class="form-label">Type</label>
+            <select class="form-select form-select-lg @error('type_id') 'is-invalid' @enderror" name="type_id" id="type_id">
+                <option selected>Select one</option>
+
+                @foreach ($types as $type )
+                <option value="{{$type->id}}">{{$type->name}}</option>
+                @endforeach
+
+            </select>
+        </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>
 
