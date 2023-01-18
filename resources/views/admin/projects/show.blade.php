@@ -6,9 +6,9 @@
     <div class="d-flex gap-4">
         <img style="height: 300px;" src="#" alt="#">
         <div class="details">
-            <h1>{{$product->title}}</h1>
-            <p>{{$product->description}}</p>
-            <span>{{$product->type ? $product->type->name : 'Null'}}</span>
+            <h1>{{$project->title}}</h1>
+            <p>{{$project->description}}</p>
+            <span>{{$project->type ? $project->type->name : 'Null'}}</span>
         </div>
     </div>
 </div>
